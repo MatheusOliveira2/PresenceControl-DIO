@@ -1,9 +1,11 @@
-package model;
+package com.dio.presenceControl.model;
 
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -12,16 +14,13 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 @Builder
 @Entity
-public class Company {
+public class Calendar {
     @Id
     private Long id;
 
+    @ManyToOne
+    private DataType dataType;
     private String description;
-    private String cnpj;
-    private String address;
-    private String district;
-    private String city;
-    private String state;
-    private String phone;
+    private LocalDateTime especialDate;
 
 }

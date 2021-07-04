@@ -1,4 +1,4 @@
-package model;
+package com.dio.presenceControl.model;
 
 
 import lombok.*;
@@ -13,10 +13,8 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 @Builder
 @Entity
-public class Occurrence {
+public class AccessLevel {
     @Id
     private long id;
-    private String name;
     private String description;
-
 }

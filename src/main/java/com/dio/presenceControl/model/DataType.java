@@ -1,4 +1,5 @@
-package model;
+package com.dio.presenceControl.model;
+
 
 import lombok.*;
 
@@ -12,9 +13,9 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 @Builder
 @Entity
-public class UserCategory {
+public class DataType {
 
     @Id
-    private Long id;
+    private long id;
     private String description;
 }

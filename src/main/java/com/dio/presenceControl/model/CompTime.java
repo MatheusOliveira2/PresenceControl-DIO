@@ -1,11 +1,10 @@
-package model;
+package com.dio.presenceControl.model;
 
 import lombok.*;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -19,8 +18,8 @@ import java.time.LocalDateTime;
 @Entity
 public class CompTime {
 
-    @AllArgsConstructor
-    @NoArgsConstructor
+    @Getter
+    @Setter
     @EqualsAndHashCode
     @Embeddable
     public class  CompTimeId implements Serializable {

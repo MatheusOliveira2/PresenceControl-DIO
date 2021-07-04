@@ -1,11 +1,9 @@
-package model;
-
+package com.dio.presenceControl.model;
 
 import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Getter
 @Setter
@@ -14,11 +12,16 @@ import javax.persistence.ManyToOne;
 @EqualsAndHashCode
 @Builder
 @Entity
-public class Location {
+public class Company {
     @Id
     private Long id;
 
-    @ManyToOne
-    private AccessLevel accessLevel;
     private String description;
+    private String cnpj;
+    private String address;
+    private String district;
+    private String city;
+    private String state;
+    private String phone;
+
 }

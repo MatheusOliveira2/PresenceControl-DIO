@@ -1,4 +1,4 @@
-package model;
+package com.dio.presenceControl.model;
 
 import lombok.*;
 
@@ -12,9 +12,9 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 @Builder
 @Entity
-public class WorkingDay {
+public class UserCategory {
 
     @Id
-    private Long id;
+    private long id;
     private String description;
 }
