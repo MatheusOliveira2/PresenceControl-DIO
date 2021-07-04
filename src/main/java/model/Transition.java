@@ -3,8 +3,7 @@ package model;
 
 import lombok.*;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,6 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
+@Entity
 public class Transition {
 
     @AllArgsConstructor
@@ -26,11 +26,16 @@ public class Transition {
         private long idUser;
     }
 
+    @Id
     @EmbeddedId
     private TransitionId id;
     private LocalDateTime inputDate;
     private LocalDateTime outputDate;
     private BigDecimal period;
+
+    @ManyToOne
     private Occurrence occurrence;
+
+    @ManyToOne
     private Calendar calendar;
 }

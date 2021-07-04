@@ -2,6 +2,8 @@ package model;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
 
@@ -11,7 +13,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
+@Entity
 public class Calendar {
+    @Id
     private Long id;
 
     @ManyToOne
