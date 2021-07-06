@@ -21,10 +21,10 @@ public class SwaggerConfig {
     public Docket apiAdmin() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.dio.live"))
+                .apis(RequestHandlerSelectors.basePackage("com.dio.presenceControl"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
-                .apiInfo(apiInfo())
+                .apiInfo(this.apiInfo())
                 .globalOperationParameters(
                         Collections.singletonList(
                                 new ParameterBuilder()
