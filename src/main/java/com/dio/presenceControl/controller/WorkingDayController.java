@@ -31,4 +31,15 @@ public class WorkingDayController {
     public ResponseEntity<WorkingDay> getWorkingDayList(@PathVariable("id") long id) throws Exception {
         return ResponseEntity.ok(this.workingDayService.getById(id).orElseThrow(() -> new NoSuchElementException("workingDay not found.")));
     }
+
+    @PutMapping
+    public ResponseEntity<WorkingDay> updateWorkingDay(@RequestBody WorkingDay workingDay){
+        return ResponseEntity.ok(this.workingDayService.update(workingDay));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<WorkingDay> delete(@PathVariable("id") long id) throws Exception {
+        this.workingDayService.delete(id);
+        return (ResponseEntity<WorkingDay>) ResponseEntity.ok();
+    }
 }
