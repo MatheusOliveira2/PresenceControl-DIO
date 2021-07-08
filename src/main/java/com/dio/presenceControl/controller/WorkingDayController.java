@@ -1,11 +1,14 @@
 package com.dio.presenceControl.controller;
 
+import com.dio.presenceControl.exception.BusinessException;
 import com.dio.presenceControl.model.WorkingDay;
 import com.dio.presenceControl.service.WorkingDayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -18,7 +21,10 @@ public class WorkingDayController {
     private WorkingDayService workingDayService;
 
     @PostMapping
-    public ResponseEntity<WorkingDay> createWorkingDay(@RequestBody WorkingDay workingDay){
+    public ResponseEntity<WorkingDay> createWorkingDay(@RequestBody @Valid WorkingDay workingDay, Errors errors){
+        if(errors.hasErrors()){
+            throw new BusinessException(errors.getFieldError().getDefaultMessage());
+        }
         return ResponseEntity.ok(this.workingDayService.save(workingDay));
     }
 

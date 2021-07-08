@@ -3,9 +3,7 @@ package com.dio.presenceControl.model;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -15,7 +13,9 @@ import javax.persistence.ManyToOne;
 @Builder
 @Entity
 public class Location {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne
