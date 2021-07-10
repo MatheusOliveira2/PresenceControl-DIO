@@ -38,8 +38,6 @@ public class SwaggerConfig {
                                         .build()));
     }
 
-
-
     @Bean
     public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
