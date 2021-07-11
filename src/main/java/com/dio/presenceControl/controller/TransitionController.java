@@ -32,7 +32,7 @@ public class TransitionController {
     }
 
     @GetMapping("/{transitionId}/user/{userId}")
-    public ResponseEntity<Transition> getTransitionList(@PathVariable("transitionId") long transitionId, @PathVariable("transitionId") long userId){
+    public ResponseEntity<Transition> getTransitionList(@PathVariable("transitionId") long transitionId, @PathVariable("userId") long userId){
         return ResponseEntity.ok(this.transitionService.getById(transitionId, userId));
     }
 
@@ -45,7 +45,7 @@ public class TransitionController {
     }
 
     @DeleteMapping("/{transitionId}/user/{userId}")
-    public ResponseEntity<Transition> delete(@PathVariable("transitionId") long transitionId, @PathVariable("transitionId") long userId){
+    public ResponseEntity<Transition> delete(@PathVariable("transitionId") long transitionId, @PathVariable("userId") long userId){
         return ResponseEntity.ok(this.transitionService.delete(transitionId,userId));
     }
 }

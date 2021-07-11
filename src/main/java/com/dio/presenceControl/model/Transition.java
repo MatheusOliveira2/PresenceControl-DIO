@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Transition {
 
+    @Id
     @EmbeddedId
     private TransitionId id;
     private LocalDateTime inputDate;
