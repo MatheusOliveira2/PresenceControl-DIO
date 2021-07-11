@@ -1,4 +1,4 @@
-package com.dio.presenceControl.model;
+package com.dio.presenceControl.model.embeddedID;
 
 import lombok.*;
 

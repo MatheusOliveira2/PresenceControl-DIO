@@ -2,7 +2,7 @@ package com.dio.presenceControl.service;
 
 import com.dio.presenceControl.exception.NotFoundException;
 import com.dio.presenceControl.model.Transition;
-import com.dio.presenceControl.model.TransitionId;
+import com.dio.presenceControl.model.embeddedID.TransitionId;
 import com.dio.presenceControl.repository.TransitionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

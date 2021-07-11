@@ -1,10 +1,10 @@
 package com.dio.presenceControl.model;
 
 
+import com.dio.presenceControl.model.embeddedID.TransitionId;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
