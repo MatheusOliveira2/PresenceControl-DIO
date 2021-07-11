@@ -1,7 +1,10 @@
 package com.dio.presenceControl.repository;
 
 import com.dio.presenceControl.model.Transition;
+import com.dio.presenceControl.model.TransitionId;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface TransitionRepository extends JpaRepository<Transition, Transition.TransitionId> {
+@Repository
+public interface TransitionRepository extends JpaRepository<Transition, TransitionId> {
 }

@@ -17,16 +17,6 @@ import java.time.LocalDateTime;
 @Entity
 public class Transition {
 
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @EqualsAndHashCode
-    @Embeddable
-    public class  TransitionId implements Serializable {
-        private long idTransition;
-        private long idUser;
-    }
-
-    @Id
     @EmbeddedId
     private TransitionId id;
     private LocalDateTime inputDate;
@@ -39,3 +29,4 @@ public class Transition {
     @ManyToOne
     private Calendar calendar;
 }
+
